@@ -86,3 +86,4 @@ if curvas_agregadas > 0:
 
 else:
     st.info("Selecciona al menos una columna para visualizar el gráfico.")
+
