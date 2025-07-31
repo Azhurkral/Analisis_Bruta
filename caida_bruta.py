@@ -6,7 +6,7 @@ import matplotlib.dates as mdates
 # Cargar datos
 @st.cache_data
 def load_data():
-    df = pd.read_csv("G:/Mi unidad/Trabajo/Pedido variación de bruta CB-PB/data.csv", delimiter=';')
+    df = pd.read_csv("data.csv", delimiter=';')
     df['Fecha'] = pd.to_datetime(df['Fecha'], format="%d/%m/%Y")
     return df
 
