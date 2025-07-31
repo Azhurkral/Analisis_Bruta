@@ -27,7 +27,7 @@ selecciones = {}
 # Mostrar selectores
 for tipo in tipo_datos:
     columnas = columnas_por_tipo[tipo]
-    seleccion = st.multiselect(f"Selecciona curvas para '{tipo}':", columnas)
+    seleccion = st.multiselect(f"Selecciona pozos para '{tipo}':", columnas)
     selecciones[tipo] = seleccion
 
 # Selector para eje secundario por tipo de grafico
