@@ -6,7 +6,7 @@ import matplotlib.dates as mdates
 # Cargar datos
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data.csv", delimiter=';')
+    df = pd.read_excel("información recopilada baterias.xlsm", sheet_name="Datos recopilados")
     df['Fecha'] = pd.to_datetime(df['Fecha'], format="%d/%m/%Y")
     return df
 
@@ -27,7 +27,7 @@ selecciones = {}
 # Mostrar selectores
 for tipo in tipo_datos:
     columnas = columnas_por_tipo[tipo]
-    seleccion = st.multiselect(f"Selecciona curvas para '{tipo}':", columnas)
+    seleccion = st.multiselect(f"Selecciona pozos para '{tipo}':", columnas)
     selecciones[tipo] = seleccion
 
 # Selector para eje secundario por tipo de grafico
@@ -86,4 +86,3 @@ if curvas_agregadas > 0:
 
 else:
     st.info("Selecciona al menos una columna para visualizar el gráfico.")
-
